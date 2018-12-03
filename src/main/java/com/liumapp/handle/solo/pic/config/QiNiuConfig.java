@@ -1,7 +1,6 @@
 package com.liumapp.handle.solo.pic.config;
 
 import com.liumapp.handle.solo.pic.bean.QiNiu;
-import com.liumapp.qtools.http.HttpTool;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,13 +17,11 @@ import org.springframework.context.annotation.Configuration;
 public class QiNiuConfig {
 
     @Bean
-    public HttpTool httpTool () {
-        return new HttpTool();
+    @ConfigurationProperties(prefix = "com.liumapp.qiniu")
+    public QiNiu qiNiu () {
+        QiNiu qiNiu = new QiNiu();
+        return qiNiu;
     }
 
-    @Bean
-    @ConfigurationProperties(prefix = "com.liumapp.qiniu")
-    public QiNiu governmentApi () {
-        return new QiNiu();
-    }
+
 }
