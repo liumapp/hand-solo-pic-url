@@ -19,9 +19,17 @@
 
     * 替换sql：
     
+            SET SQL_SAFE_UPDATES = 0;
+    
             UPDATE b3_solo_article SET articleContent = REPLACE( articleContent,'http://你之前七牛测试域名地址','http://oss.liumapp.com') ;
             
-        在sql命令行或者相关工具中对文章表（大D在新版本的solo中似乎改动了数据表，所以您在操作之前，请确认一遍表名与字段名是否匹配）进行修改。            
+        我之前的七牛测试域名是：http://om40sen9v.bkt.clouddn.com，那么sql就是：
+        
+            UPDATE b3_solo_article SET articleContent = REPLACE( articleContent,'http://om40sen9v.bkt.clouddn.com','http://oss.liumapp.com') ;
+            
+        在sql命令行或者相关工具中对文章表（大D在新版本的solo中似乎改动了数据表，所以您在操作之前，请确认一遍表名与字段名是否匹配）进行修改。
+        
+        各位看官读到这里，基本上就解决了自己博客图片资源路径失效的问题，接下来记录的内容，介绍了如何将七牛云的图片资源转移到GitHub上（换句话说，就是利用GitHub作为自己站点的OSS存储服务，我之所以想要这么折腾一番，是希望在后续将博客的前后端进行分离实现，前端整体部署到GitHub，后端则利用自己的ECS资源仅仅提供API服务）。            
 
     * 因为我个人的七牛云空间就快满了（免费空间只有600M），而我仅仅是拿来存储博客的图片而已，所以我打算使用GitHub来进行图片的保存。
 
