@@ -17,8 +17,18 @@
     
 * 接下来修改solo数据库，把所有博文的图片资源地址中的测试域名，替换为自己刚刚设置好的域名（oss.liumapp.com）即可，但是我这里还想做一些特殊操作
 
+    * 替换sql：
+    
+            UPDATE b3_solo_article SET articleContent = REPLACE( articleContent,'http://你之前七牛测试域名地址','http://oss.liumapp.com') ;
+            
+        在sql命令行或者相关工具中对文章表（大D在新版本的solo中似乎改动了数据表，所以您在操作之前，请确认一遍表名与字段名是否匹配）进行修改。            
+
     * 因为我个人的七牛云空间就快满了（免费空间只有600M），而我仅仅是拿来存储博客的图片而已，所以我打算使用GitHub来进行图片的保存。
 
 * 使用GitHub存储所有博客图片:
 
-    *         
+    * 首先可以使用官方推荐的python脚本(script/download-process.py)将七牛云oss.liumapp.com空间上的所有资源下载下来
+    
+    * 对python不熟悉的同学，手撸Java代码，再通过七牛云的api也是可以达到批量下载的目的（）
+    
+            
