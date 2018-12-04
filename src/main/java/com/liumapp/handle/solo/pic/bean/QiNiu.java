@@ -19,13 +19,21 @@ public class QiNiu {
 
     private String bucket;
 
+    /**
+     * 示例
+     * http://oss.liumapp.com
+     */
+
+    private String domain;
+
     public QiNiu() {
     }
 
-    public QiNiu(String appKey, String secretKey, String bucket) {
+    public QiNiu(String appKey, String secretKey, String bucket, String domain) {
         this.appKey = appKey;
         this.secretKey = secretKey;
         this.bucket = bucket;
+        this.domain = domain;
     }
 
     public String getAppKey() {
@@ -52,6 +60,15 @@ public class QiNiu {
 
     public QiNiu setBucket(String bucket) {
         this.bucket = bucket;
+        return this;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public QiNiu setDomain(String domain) {
+        this.domain = domain;
         return this;
     }
 }
