@@ -1,0 +1,7 @@
+com:
+  liumapp:
+    qiniu:
+      appKey: 'your app key here '
+      secretKey: 'your secret key here '
+      bucket: 'your bucket here'
+      domain: 'http://oss.liumapp.com'
