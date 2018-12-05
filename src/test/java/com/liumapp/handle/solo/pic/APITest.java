@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.naming.NoPermissionException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -79,7 +80,11 @@ public class APITest {
             for (FileInfo item : items) {
                 System.out.println("ready to download : " + item.key + " to " + dataPath);
                 String url = qiNiu.getDomain() + "/" + item.key;
-                UrlDownloadTool.NIODownload(url, dataPath + "/" + item.key);
+                try {
+                    UrlDownloadTool.NIODownload(url, dataPath + "/" + item.key);
+                } catch (NoPermissionException e) {
+                    System.out.println("download file failed , plz check your file folder permission");
+                }
             }
         }
     }
