@@ -37,7 +37,20 @@
 
     * 首先可以使用官方推荐的python脚本(script/download-process.py)将七牛云oss.liumapp.com空间上的所有资源下载下来
     
-    * 对python不熟悉的同学，手撸Java代码，再通过七牛云的api也是可以达到批量下载的目的（）
+    * 对python不熟悉的同学，手撸Java代码，再通过七牛云的api也是可以达到批量下载的目的（src/main/test/.../APITest.java）
+    
+        * APITest.java的getItemList方法为获取你七牛云空间的所有文件信息
+        
+        * APITest.java的downloadAllFile方法为下载你七牛云空间的所有文件
+        
+        * 注意事项：在运行之前，你需要首先配置src/main/java/.../resources/application.yml文件，填写自己的七牛云appkey以及secretKey等信息
+        
+    * 完成所有图片的下载后拷贝上传GitHub...
+    
+    
+    
+        
+                  
     
     
     
